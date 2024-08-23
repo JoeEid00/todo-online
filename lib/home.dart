@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/app_colors.dart';
+import 'package:todo_app/tabs/settings_tab.dart';
+import 'package:todo_app/tabs/tasks_tab.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String routeName="Home";
@@ -84,12 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
 
-      body: Container(
-//         color:Colors.red,
-      ),
-
+      body: tabs[SelectedIndex]
     );
   }
+
+  List<Widget> tabs=[
+    TasksTab(),
+  SettingsTab(),
+  ];
 }
 
       //another way to make notch
